@@ -1,0 +1,12 @@
+---
+- hosts: databas
+  tasks:
+          - name: Ha senaste verisonen av MariaDB-paketet installerat
+            yum:
+                    name: mariadb-server
+                    state: latest
+          - name: Starta MariaDB vid boot.
+            service:
+                    name: mariadb
+                    enabled: yes
+                    state: started
